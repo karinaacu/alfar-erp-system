@@ -4,50 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#081f5c">
-  <title>Alfar ERP — Operations Workspace</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Alfar Butcher ERP — Workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
-      <a class="brand" href="#dashboard" aria-label="Alfar ERP beranda">
-        <span class="brand-mark">A</span><span><b>alfar<span>.</span></b><small>Butcher ERP</small></span>
-      </a>
+      <a class="brand" href="#dashboard" aria-label="Alfar ERP beranda"><span class="brand-mark">A</span><span><b>ALFAR <i>ERP</i></b><small>Butcher Operations</small></span></a>
       <div class="workspace"><span class="workspace-dot"></span><span>Operations workspace</span><span class="chevron">⌄</span></div>
-      <nav class="primary-nav" aria-label="Navigasi utama">
-        <p class="nav-caption">WORKSPACE</p>
-        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">◫</span><span>Ringkasan</span></button>
-        <p class="nav-caption">PESANAN & PERENCANAAN</p>
-        <button class="nav-item" data-page="orders"><span class="nav-icon">▤</span><span>Purchase Order</span><span class="nav-count">12</span></button>
-        <button class="nav-item" data-page="schedule"><span class="nav-icon">▦</span><span>Schedule Produksi</span></button>
-        <button class="nav-item" data-page="ppic"><span class="nav-icon">◈</span><span>Kebutuhan Material</span><span class="nav-alert"></span></button>
-        <p class="nav-caption">OPERASIONAL</p>
-        <button class="nav-item" data-page="fresh"><span class="nav-icon">◌</span><span>Tally Fresh</span></button>
-        <button class="nav-item" data-page="frozen"><span class="nav-icon">❄</span><span>Tally Frozen</span></button>
-        <button class="nav-item" data-page="production"><span class="nav-icon">⚙</span><span>Produksi & SPK</span></button>
-        <button class="nav-item" data-page="shipping"><span class="nav-icon">⇢</span><span>Shipping</span></button>
-        <p class="nav-caption">PENGELOLAAN</p>
-        <button class="nav-item" data-page="reports"><span class="nav-icon">▥</span><span>Laporan</span></button>
-        <button class="nav-item" data-page="master"><span class="nav-icon">⚑</span><span>Master Data</span></button>
-      </nav>
-      <div class="sidebar-bottom">
-        <div class="help-card"><span class="help-spark">✦</span><b>Butuh bantuan?</b><small>Panduan alur kerja Alfar</small><button data-page="guide">Buka panduan <span>↗</span></button></div>
-        <button class="profile"><span class="avatar">IF</span><span class="profile-copy"><b>Irsyaad F.</b><small>System Analyst</small></span><span class="more">···</span></button>
-      </div>
+      <nav class="primary-nav" id="workspaceNav" aria-label="Navigasi modul"></nav>
+      <div class="sidebar-bottom"><div class="help-card"><span class="help-spark">✦</span><b>Butuh bantuan?</b><small>Panduan proses Alfar Butcher</small><button data-page="guide">Buka panduan <span>↗</span></button></div><button class="profile" data-page="profile"><span class="avatar">SA</span><span class="profile-copy"><b>Pengaturan akun</b><small>Profil & keamanan</small></span><span class="more">···</span></button><button class="logout-button" data-action="Keluar Sistem">↪ Keluar Sistem</button></div>
     </aside>
     <div class="mobile-scrim" id="scrim"></div>
     <main class="main-area">
-      <header class="topbar">
-        <div class="topbar-left"><button class="icon-button mobile-menu" id="menuToggle" aria-label="Buka menu">☰</button><div class="breadcrumbs"><span>Alfar ERP</span><i>/</i><b id="crumbTitle">Ringkasan</b></div></div>
-        <div class="topbar-actions"><div class="top-date"><span class="calendar-icon">▦</span><span>Selasa, 17 November 2026</span></div><button class="icon-button notification" aria-label="Notifikasi">♧<i></i></button><span class="top-avatar">IF</span></div>
-      </header>
+      <header class="topbar"><div class="topbar-left"><button class="icon-button mobile-menu" id="menuToggle" aria-label="Buka menu">☰</button><div class="breadcrumbs"><span>Alfar ERP</span><i>/</i><b id="crumbTitle">Dashboard</b></div></div><div class="topbar-actions"><div class="top-date"><span class="calendar-icon">▦</span><span>17 November 2026</span></div><button class="icon-button" id="themeToggle" aria-label="Ubah tema">☾</button><span class="connection-state"><i></i> Koneksi</span><button class="icon-button notification" aria-label="Notifikasi">♧<i></i></button><span class="top-avatar">SA</span></div></header>
       <section class="page-content" id="pageContent" aria-live="polite"></section>
-      <footer class="page-footer"><span>Alfar Butcher ERP</span><span>Konsep UI/UX · data contoh untuk demonstrasi</span></footer>
+      <footer class="page-footer"><span>Alfar Butcher ERP</span><span>Prototype UI/UX · tidak terhubung ke transaksi produksi</span></footer>
     </main>
   </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div><aside class="detail-drawer" id="detailDrawer" aria-label="Panel detail"></aside>
+  <button class="chat-launcher" id="chatLauncher" aria-label="Buka chat tim">◉ <span>Chat Tim</span><i>4</i></button><section class="chat-panel" id="chatPanel" aria-label="Chat Alfar Butcher"><header><div><b>Alfar Butcher Live</b><small>Chat tim operasional</small></div><button id="chatClose" aria-label="Tutup chat">×</button></header><div class="chat-empty">Gunakan chat tim untuk komunikasi internal lintas divisi.</div><label>Kirim Ke<select id="chatRecipient"><option>Semua · Broadcast / All</option><option>Pengguna 1</option><option>Pengguna 2</option></select></label><textarea id="chatDraft" placeholder="Tulis pesan…"></textarea><button id="chatSend" class="button primary">Kirim Pesan</button></section>
   <div class="toast" id="toast" role="status"></div>
   <script src="app.js" defer></script>
 </body>
